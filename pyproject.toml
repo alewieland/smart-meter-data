@@ -8,6 +8,8 @@ packages = [{include = "smart_meter_data"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+pandas = "^2.2.1"
+mage-ai = {extras = ["dbt"], version = "^0.9.67"}
 
 
 [build-system]
