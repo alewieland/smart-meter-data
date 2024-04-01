@@ -101,8 +101,8 @@ If everything works, you can run ``terraform init``, ``terraform build`` and ``t
 
 ### First steps in mage
 
-First, open the config file
-![Config location](/img/Open_config.png)
+First, open the config file:
+![Config location](/img/Open_config.png =x250)
 
 and then add the key of the service account.
 ![Credentials](/img/Add_credentials.png).
