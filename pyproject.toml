@@ -10,6 +10,8 @@ packages = [{include = "smart_meter_data"}]
 python = "^3.11"
 pandas = "^2.2.1"
 mage-ai = {extras = ["dbt"], version = "^0.9.67"}
+jupyter = "^1.0.0"
+lab = "^8.1"
 
 
 [build-system]

@@ -6,6 +6,16 @@ if 'transformer' not in globals():
 if 'test' not in globals():
     from mage_ai.data_preparation.decorators import test
 
+def select_number_columns(df: DataFrame) -> DataFrame:
+    return df[['Age', 'Fare', 'Parch', 'Pclass', 'SibSp', 'Survived']]
+
+
+def fill_missing_values_with_median(df: DataFrame) -> DataFrame:
+    for col in df.columns:
+        values = sorted(df[col].dropna().tolist())
+        median_age = values[math.floor(len(values) / 2)]
+        df[[col]] = df[[col]].fillna(median_age)
+    return df
 
 
 @transformer
@@ -23,15 +33,8 @@ def transform_df(df: DataFrame, *args, **kwargs) -> DataFrame:
         DataFrame: Transformed data frame
     """
     # Specify your transformation logic here
-    df
-    df.astype({
-        'area_code': 'int32',
-        'num_meter': 'int32',
-        'timestamp': 'datetime64[ns]',
-        'value_kwh': 'float32',
-        }).dtypes
 
-    return df.ffill()
+    return fill_missing_values_with_median(select_number_columns(df))
 
 
 @test

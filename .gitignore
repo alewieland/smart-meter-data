@@ -13,6 +13,7 @@
 # Ignore log files
 *.log
 
+
 # Ignore temporary files
 *.tmp
 *.bak
@@ -38,7 +39,7 @@ __pycache__/
 # Ignore environment configuration files
 .env
 .env.*
-*.env
+.dev.env
 
 # Ignore local development settings
 local_settings.py
@@ -56,3 +57,14 @@ local_settings.py
 # Ignore backup files
 *.bak
 *.swp
+
+# Ignore parquet files
+*.parquet
+
+# Ignore csv files
+*.csv
+*.csv.gz
+
+# Remove mage_data directory and all subfolders
+/mage_data/
+/*.json
