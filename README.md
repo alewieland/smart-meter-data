@@ -119,6 +119,20 @@ And change the bucket-name, the key path, and the project name where needed.
 Check that both pipelines are set correct... And try running them and ingest the data to Google Cloud
 Otherwise, they are set to run at the start of each month... 
 
+### GCS and BQ
+
+If everything runs smoothly, you should get two datasets in your bucket... once an unpartitioned .parquet file, once a folder with parquet files inside... a nicely partitioned dataset.
+
+![GCS All](/img/gcs_bucket.png)
+
+And the partitioned Dataset
+![GCS Partitioned](/img/gcs_partitioned.png)
+
+And last but not least, we can load this data to BigQuery using mage.
+
+Here, i loaded two datasets. Once just all the data, and once all the data aggregated (although this is not necessary)
+![BQ](/img/bq.png)
+
 
 ### Google looker studio
 
